@@ -6,6 +6,9 @@ https://tryhackme.com/room/linuxfundamentalspart2
 ssh tryhackme@10.64.186.52
 ```
 
+touch - create a file
+file - determine a type of file
+
 /etc
 -----
 
