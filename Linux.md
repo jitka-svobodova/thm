@@ -38,3 +38,43 @@ Similar to the memory on your computer, once the computer is restarted, the cont
 
 What's useful for us in pentesting is that any user can write to this folder by default. Meaning once we have access to a machine, it serves as a good place to store things like our enumeration scripts.
 
+Terminal Text Editors
+======================
+- echo with > or >>
+- nano
+
+Downloading Files (Wget)
+========================
+```
+wget https://assets.tryhackme.com/additional/linux-fundamentals/part3/myfile.txt
+```
+
+Transferring Files From Your Host - SCP (SSH)
+=============================================
+- secure copy
+
+- secure copy of the important.txt file to the 192.168.1.30 machine, ubuntu user. rename important.txt t transferred.txt.
+  ```
+  scp important.txt ubuntu@192.168.1.30:/home/ubuntu/transferred.txt
+  ```
+
+- secure copy from the 192.168.1.30 machine, ubuntu user, rename documents.txt to notes.txt
+  ```
+  scp ubuntu@192.168.1.30:/home/ubuntu/documents.txt notes.txt 
+  ```
+
+Serving Files From Your Host - WEB
+==================================
+- HTTPServer - in python
+  - This module turns your computer into a quick and easy web server that you can use to serve your own files, where they can then be downloaded by another computing using commands such as curl and wget.
+  ```
+  python3 -m  http.server
+  ```
+  Keep the server running, open new terminal, and write:
+  ```
+  wget http://10.66.145.208:8000/myfile
+  ```
+
+  Updog webserver - https://github.com/sc0tfree/updog
+  
+
