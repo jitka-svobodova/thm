@@ -681,3 +681,7 @@ This query detects PowerShell commands containing -EncodedCommand or Base64 text
 If your defences are correctly configured, this query should return no results, meaning the encoded payload (such as the “Muahahaha” message) never ran.
 
 If results appear, you can decode the Base64 command to inspect the attacker’s true intent.
+
+16 Forensics - Registry Furensics
+==================================
+Hives - Registry is distributed - made up of several separate files, each storing information on different configuration settings. These files are known as Hives.
