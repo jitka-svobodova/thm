@@ -740,5 +740,5 @@ Registry Explorer
 https://ericzimmerman.github.io/
 - Registry analysis cannot be done on the system under investigation (due to the chance of modification) =>  collect the Registry Hives and open them offline into our forensic workstation
 - the Registry Editor does not allow opening offline hives. The Register editor also displays some of the key values in binary which are not readable.
-- 
+- SHIFT + Open - opens a clean log file
 
