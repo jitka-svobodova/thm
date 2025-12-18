@@ -686,27 +686,32 @@ If results appear, you can decode the Base64 command to inspect the attacker’s
 ==================================
 Hives - Registry is distributed - made up of several separate files, each storing information on different configuration settings. These files are known as Hives.
 
-| Hive Name              | Contains (Example)                                     | Location                                                       |
-| :--------------------- |:------------------------------------------------------ | :--------------------------------------------------------------|
-| SYSTEM                 | - services                                             | C:\Windows\System32\config\SYSTEM                              |
-|                        | - mounted devices                                      |                                                                |
-|                        | - boot configuration                                   |                                                                |
-|                        | - drivers                                              |                                                                |
-|                        | - hardware                                             |                                                                |
-| SECURITY               | - local security policies                              | C:\Windows\System32\config\SECURITY                            |
-|                        | - audit policy settings                                |                                                                |
-| SOFTWARE               | - installed programs                                   | C:\Windows\System32\config\SOFTWARE                            |
-|                        | - OS Version and other info                            |                                                                |
-|                        | - autostarts                                           |                                                                |
-|                        | - program settings                                     |                                                                |
-| SAM                    | - usernames and their metadata                         | C:\Windows\System32\config\SAM                                 |
-|                        | - password hashes                                      |                                                                |
-|                        | - group memberships                                    |                                                                |
-|                        | - account statuses                                     |                                                                |
-| NTUSER.DAT             | - recent files                                         | C:\Users\username\NTUSER.DAT                                   |
-|                        | - user preferences                                     |                                                                |
-|                        | - user-specific autostarts                             |                                                                |
-| USRCLASS.DAT           | - shellbags                                            | C:\Users\username\AppData\Local\Microsoft\Windows\USRCLASS.DAT |
-|                        | - jump lists                                           |                                                                |
+| Hive Name              | Contains (Example)                                     | Location                                                       | Registry Editor                        |
+| :--------------------- |:------------------------------------------------------ | :--------------------------------------------------------------|:---------------------------------------|
+| SYSTEM                 | - services                                             | C:\Windows\System32\config\SYSTEM                              | HKEY_LOCAL_MACHINE\SYSTEM              |
+|                        | - mounted devices                                      |                                                                |                                        |
+|                        | - boot configuration                                   |                                                                |                                        |
+|                        | - drivers                                              |                                                                |                                        |
+|                        | - hardware                                             |                                                                |                                        |
+| SECURITY               | - local security policies                              | C:\Windows\System32\config\SECURITY                            | HKEY_LOCAL_MACHINE\SECURITY            |
+|                        | - audit policy settings                                |                                                                |                                        |
+| SOFTWARE               | - installed programs                                   | C:\Windows\System32\config\SOFTWARE                            | HKEY_LOCAL_MACHINE\SOFTWARE            |
+|                        | - OS Version and other info                            |                                                                |                                        |
+|                        | - autostarts                                           |                                                                |                                        |
+|                        | - program settings                                     |                                                                |                                        |
+| SAM                    | - usernames and their metadata                         | C:\Windows\System32\config\SAM                                 | HKEY_LOCAL_MACHINE\SAM                 |
+|                        | - password hashes                                      |                                                                |                                        |
+|                        | - group memberships                                    |                                                                |                                        |
+|                        | - account statuses                                     |                                                                |                                        |
+| NTUSER.DAT             | - recent files                                         | C:\Users\username\NTUSER.DAT                                   | HKEY_USERS\<SID> and HKEY_CURRENT_USER |
+|                        | - user preferences                                     |                                                                |                                        |
+|                        | - user-specific autostarts                             |                                                                |                                        |
+| USRCLASS.DAT           | - shellbags                                            | C:\Users\username\AppData\Local\Microsoft\Windows\USRCLASS.DAT | HKEY_USERS\<SID>\Software\Classes      |
+|                        | - jump lists                                           |                                                                |                                        |
 
+Windows' Registry Editor
+------------------------
+- view the regitry data available in the hives (binary)
+- HKEY_LOCAL_MACHINE, HKEY_CURRENT_USER, ... = registry hives organized into the **Root Keys**
+- 
 
