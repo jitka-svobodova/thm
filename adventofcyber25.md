@@ -686,7 +686,7 @@ If results appear, you can decode the Base64 command to inspect the attacker’s
 ==================================
 Hives - Registry is distributed - made up of several separate files, each storing information on different configuration settings. These files are known as Hives.
 
-| Hive Name              | Contains                                               | Location                                                       |
+| Hive Name              | Contains (Example)                                     | Location                                                       |
 | :--------------------- |:------------------------------------------------------ | :--------------------------------------------------------------|
 | SYSTEM                 | - services                                             | C:\Windows\System32\config\SYSTEM                              |
 |                        | - mounted devices                                      |                                                                |
