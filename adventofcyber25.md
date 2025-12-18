@@ -713,5 +713,27 @@ Windows' Registry Editor
 ------------------------
 - view the regitry data available in the hives (binary)
 - HKEY_LOCAL_MACHINE, HKEY_CURRENT_USER, ... = registry hives organized into the **Root Keys**
-- 
+
+- view connected USB devices:
+  - Open the Registry Editor
+  - Navigate to HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR
+
+- view programs run by the user: 
+  - Open the Registry Editor
+  - Navigate to HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
+
+Registry Forensics
+------------------
+| Registry Key                                                           | Importance                                                                                                        |
+| :--------------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------- |
+| HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist     | Stores information on recently accessed applications launched via the GUI.                                        |
+| HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths     | Stores all the paths and locations typed by the user inside the Explorer address bar.                             |
+| HKLM\Software\Microsoft\Windows\CurrentVersion\AppPaths                | Stores the path of the applications.                                                                              |
+| HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery | Stores all the search terms typed by the user in the Explorer search bar.                                         |
+| HKLM\Software\Microsoft\Windows\CurrentVersion\Run                     | Stores information on the programs that are set to automatically start (startup programs) when the users logs in. |
+| HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs     | Stores information on the files that the user has recently accessed.                                              |
+| HKLM\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName        | Stores the computer's name (hostname).                                                                            |
+| HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall               | Stores information on the installed programs.                                                                     |
+
+
 
