@@ -728,7 +728,7 @@ Registry Forensics
 | :--------------------------------------------------------------------- |:----------------------------------------------------------------------------------------------------------------- |
 | HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist     | Stores information on recently accessed applications launched via the GUI.                                        |
 | HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths     | Stores all the paths and locations typed by the user inside the Explorer address bar.                             |
-| HKLM\Software\Microsoft\Windows\CurrentVersion\AppPaths                | Stores the path of the applications.                                                                              |
+| HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths               | Stores the path of the applications.                                                                              |
 | HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\WordWheelQuery | Stores all the search terms typed by the user in the Explorer search bar.                                         |
 | HKLM\Software\Microsoft\Windows\CurrentVersion\Run                     | Stores information on the programs that are set to automatically start (startup programs) when the users logs in. |
 | HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs     | Stores information on the files that the user has recently accessed.                                              |
