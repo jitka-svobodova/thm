@@ -686,17 +686,27 @@ If results appear, you can decode the Base64 command to inspect the attacker’s
 ==================================
 Hives - Registry is distributed - made up of several separate files, each storing information on different configuration settings. These files are known as Hives.
 
-| Hive Name              | Contains                                               | Location                                          |
-| :--------------------- |:------------------------------------------------------ | :-------------------------------------------------|
-| SYSTEM                 | - services                                             | C:\Windows\System32\config\SYSTEM                 |
-|                        | - mounted devices                                      |                                                   |
-|                        | - boot configuration                                   |                                                   |
-|                        | - drivers                                              |                                                   |
-|                        | - hardware                                             |                                                   |
-| SECURITY               | Use > to overwrite a file, and >> to append to the end | some-long-command > /home/mcskidy/output.txt      |
-| SOFTWARE               | Run the second command if the first was successful     | grep "secret" message.txt && echo "Secret found!" |
-| SAM                    | Run the second command if the first was successful     | grep "secret" message.txt && echo "Secret found!" |
-| NTUSER.DAT             | Run the second command if the first was successful     | grep "secret" message.txt && echo "Secret found!" |
-| USRCLASS.DAT           | Run the second command if the first was successful     | grep "secret" message.txt && echo "Secret found!" |
+| Hive Name              | Contains                                               | Location                                                       |
+| :--------------------- |:------------------------------------------------------ | :--------------------------------------------------------------|
+| SYSTEM                 | - services                                             | C:\Windows\System32\config\SYSTEM                              |
+|                        | - mounted devices                                      |                                                                |
+|                        | - boot configuration                                   |                                                                |
+|                        | - drivers                                              |                                                                |
+|                        | - hardware                                             |                                                                |
+| SECURITY               | - local security policies                              | C:\Windows\System32\config\SECURITY                            |
+|                        | - audit policy settings                                |                                                                |
+| SOFTWARE               | - installed programs                                   | C:\Windows\System32\config\SOFTWARE                            |
+|                        | - OS Version and other info                            |                                                                |
+|                        | - autostarts                                           |                                                                |
+|                        | - program settings                                     |                                                                |
+| SAM                    | - usernames and their metadata                         | C:\Windows\System32\config\SAM                                 |
+|                        | - password hashes                                      |                                                                |
+|                        | - group memberships                                    |                                                                |
+|                        | - account statuses                                     |                                                                |
+| NTUSER.DAT             | - recent files                                         | C:\Users\username\NTUSER.DAT                                   |
+|                        | - user preferences                                     |                                                                |
+|                        | - user-specific autostarts                             |                                                                |
+| USRCLASS.DAT           | - shellbags                                            | C:\Users\username\AppData\Local\Microsoft\Windows\USRCLASS.DAT |
+|                        | - jump lists                                           |                                                                |
 
 
