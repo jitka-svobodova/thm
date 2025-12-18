@@ -685,3 +685,18 @@ If results appear, you can decode the Base64 command to inspect the attacker’s
 16 Forensics - Registry Furensics
 ==================================
 Hives - Registry is distributed - made up of several separate files, each storing information on different configuration settings. These files are known as Hives.
+
+| Hive Name              | Contains                                               | Location                                          |
+| :--------------------- |:------------------------------------------------------ | :-------------------------------------------------|
+| SYSTEM                 | - services                                             | C:\Windows\System32\config\SYSTEM                 |
+|                        | - mounted devices                                      |                                                   |
+|                        | - boot configuration                                   |                                                   |
+|                        | - drivers                                              |                                                   |
+|                        | - hardware                                             |                                                   |
+| SECURITY               | Use > to overwrite a file, and >> to append to the end | some-long-command > /home/mcskidy/output.txt      |
+| SOFTWARE               | Run the second command if the first was successful     | grep "secret" message.txt && echo "Secret found!" |
+| SAM                    | Run the second command if the first was successful     | grep "secret" message.txt && echo "Secret found!" |
+| NTUSER.DAT             | Run the second command if the first was successful     | grep "secret" message.txt && echo "Secret found!" |
+| USRCLASS.DAT           | Run the second command if the first was successful     | grep "secret" message.txt && echo "Secret found!" |
+
+
