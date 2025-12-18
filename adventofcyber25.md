@@ -735,5 +735,10 @@ Registry Forensics
 | HKLM\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName        | Stores the computer's name (hostname).                                                                            |
 | HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall               | Stores information on the installed programs.                                                                     |
 
-
+Registry Explorer
+------------------
+https://ericzimmerman.github.io/
+- Registry analysis cannot be done on the system under investigation (due to the chance of modification) =>  collect the Registry Hives and open them offline into our forensic workstation
+- the Registry Editor does not allow opening offline hives. The Register editor also displays some of the key values in binary which are not readable.
+- 
 
