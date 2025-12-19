@@ -746,3 +746,21 @@ Rooms
 ------
 https://tryhackme.com/room/expregistryforensics
 
+17 Cyber Chef - Hoperation Save McSkidy
+========================================
+Encoding and Decoding
+---------------------
+
+|                        | Encoding                                               | Encryption                                        |
+| :--------------------- |:------------------------------------------------------ | :-------------------------------------------------|
+| Purpose                | compatibility, usability                               | security, confidentiality                         |
+| Process                | standardized                                           | algorithm + key                                   |
+| Security               | No                                                     | Yes                                               |
+| Speed                  | Fast                                                   | Slow                                              |
+| Examples               | Base64                                                 | TLS (Transport Layer Security)                    |
+
+Cyber Chef
+-----------
+https://cyberchef.io/
+
+
