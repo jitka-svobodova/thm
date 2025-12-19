@@ -771,4 +771,11 @@ https://gchq.github.io/CyberChef/#recipe=To_Base64('A-Za-z0-9%2B/%3D')Label('enc
 
 https://tryhackme.com/adventofcyber25/sidequest
 
+18 Obfuscation - The Egg shell File
+------------------------------------
+Obfuscation is the practice of making data hard to read and analyze. Attackers use it to evade basic detection and delay investigations. 
+
+ROOM
+-----
+https://tryhackme.com/room/obfuscationprinciples
 
