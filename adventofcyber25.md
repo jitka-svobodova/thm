@@ -1138,3 +1138,7 @@ Mitigation
 - Perform a final stock validation right before committing the transaction to prevent overselling.
 - Implement idempotency keys for checkout requests to ensure duplicates aren’t processed multiple times.
 - Apply rate limiting or concurrency controls to block rapid, repeated checkout attempts from the same user or session.
+
+ROOMS
+-----
+https://tryhackme.com/room/raceconditionsattacks
