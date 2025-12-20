@@ -1119,3 +1119,22 @@ ROOMS
 -----
 https://tryhackme.com/jr/industrial-intrusion
 
+20 Race Conditions - Toy to The World
+======================================
+Types of Race Conditions
+- **Time-of-Check to Time-of-Use (TOCTOU)**: A TOCTOU race condition happens when a program checks something first and uses it later, but the data changes in between. This means what was true at the time of the check might no longer be true when the action happens. It’s like checking if a toy is in stock, and by the time you click "Buy" someone else has already bought it. For example, two users buy the same "last item" at the same time because the stock was checked before it was updated.
+- **Shared resource**: This occurs when multiple users or systems try to change the same data simultaneously without proper control. Since both updates happen together, the final result depends on which one finishes last, creating confusion. Think of two cashiers updating the same inventory spreadsheet at once, and one overwrites the other’s work.
+- **Atomicity violation**: An atomic operation should happen all at once, either fully done or not at all. When parts of a process run separately, another request can sneak in between and cause inconsistent results. It’s like paying for an item, but before the system confirms it, someone else changes the price. For example, a payment is recorded, but the order confirmation fails because another request interrupts the process.
+
+Burp Suite
+----------
+- an integrated platform for performing security testing of web applications. It includes various tools for scanning, fuzzing, intercepting, and analysing web traffic. It is used by security professionals worldwide to find and exploit vulnerabilities in web applications.
+
+- "Intercept off": This step ensures that Burp Suite no longer holds your browser requests and allows them to pass through normally.
+
+Mitigation
+-----------
+- Use atomic database transactions so stock deduction and order creation execute as a single, consistent operation.
+- Perform a final stock validation right before committing the transaction to prevent overselling.
+- Implement idempotency keys for checkout requests to ensure duplicates aren’t processed multiple times.
+- Apply rate limiting or concurrency controls to block rapid, repeated checkout attempts from the same user or session.
