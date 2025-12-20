@@ -775,6 +775,10 @@ https://tryhackme.com/adventofcyber25/sidequest
 ------------------------------------
 Obfuscation is the practice of making data hard to read and analyze. Attackers use it to evade basic detection and delay investigations. 
 
+
+19 ICS/Modbus - Claus for Concern
+==================================
+
 ROOM
 -----
 https://tryhackme.com/room/obfuscationprinciples
