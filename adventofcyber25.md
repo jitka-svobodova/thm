@@ -1142,3 +1142,43 @@ Mitigation
 ROOMS
 -----
 https://tryhackme.com/room/raceconditionsattacks
+
+21 Malware Analysis - Malhare.exe
+==================================
+HTA (HTML Application)
+----------------------
+- HTML, JScript, VBScript
+- on Windows through a built-in component called Microsoft HTML Application Host - mshta.exe process
+- https://www.cloudsek.com/blog/threat-actors-lure-victims-into-downloading-hta-files-using-clickfix-to-spread-epsilon-red-ransomware
+
+- structure:
+  1. The HTA declaration: This defines the file as an HTML Application and can include basic properties like title, window size, and behaviour.
+  2. The interface (HTML and CSS): This section creates the layout and visuals, such as buttons, forms, or text.
+  3. The script (VBScript or JavaScript): Here is where the logic lives; it defines what actions the HTA will perform when opened or when a user interacts with it.
+
+- Common purposes of malicious HTA use:
+  1. Initial access/delivery: HTA files are often delivered by phishing (email attachments, fake web pages, or downloads) and run via mshta.exe.
+  2. Downloaders/droppers: An HTA can execute a script that fetches additional binaries or scripts from the attacker's C2.
+  3. Obfuscation/evasion: HTAs can hide intent by embedding encoded data(Base64), by using short VBScript/JScript fragments, or by launching processes with hidden windows.
+  4. Living-off-the-land: HTA commonly calls built-in Windows tools (mshta.exe, powershell.exe, wscript.exe, rundll32.exe) to avoid adding new binaries to disk.
+ 
+ - b:b="powershell -NoProfile -ExecutionPolicy Bypass -Command, a pattern commonly seen in malicious HTAs used for delivery or launching
+ - FromBase64String. This is likely a pointer to further instructions or a downloaded payload. If you see an encoded string, assume it hides a URL.
+ - Decoding it reveals the attacker’s command-and-control (C2) address
+
+ - After the encoded PowerShell command, we can see three key variables: $U, $C, and $B. Let’s quickly break down what each does:
+
+  - $U: Holds the decoded URL, the location from which the next script or payload will be fetched.
+  - $C: Stores the content downloaded from that URL, usually a PowerShell script or text instructions.
+  - $B: Converts that content into an executable scriptblock and runs it directly in memory.
+  - Whenever you see a chain of variables like this, try to trace where each one is created, used, and passed. If a variable ends up inside a function like Run, Execute, or Eval, that’s a sign that downloaded data is being executed, a key indicator of malicious activity.
+
+  - As a summary, the process for reviewing a suspicious HTA can be broken down into three main steps:
+  1. Identify the scripts section (VBScript)
+  2. Look for encoded data or external connections (e.g. Base64, HTTP requests)
+  3. Follow the logic to see what's execute or being sent out.
+
+ROOMS
+------
+https://tryhackme.com/adventofcyber25/sidequest
+https://tryhackme.com/room/maldoc
