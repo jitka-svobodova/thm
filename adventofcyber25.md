@@ -1186,3 +1186,29 @@ https://tryhackme.com/room/maldoc
 
 22 C2 Detection - Command & Carol
 ==================================
+- convert our PCAP (packet capture) file to Zeek logs, and RITA (Real Intelligence Threat Analytics) will do the rest
+- Real Intelligence Threat Analytics (RITA) is an open-source framework created by Active Countermeasures. Its core functionality is to detect command and control (C2) communication by analyzing network traffic captures and logs. Its primary features are:
+  - C2 beacon detection
+  - DNS tunneling detection
+  - Long connection detection
+  - Data exfiltration detection
+  - Checking threat intel feeds
+  - Score connections by severity
+  - Show the number of hosts communicating with a specific external IP
+  - Shows the datetime when the external host was first seen on the network
+ 
+- The magic behind RITA is its analytics. It correlates several captured fields, including IP addresses, ports, timestamps, and connection durations, among others. Based on the normalized and correlated dataset, RITA runs several analysis modules collecting information like:
+  - Periodic connection intervals
+  - Excessive number of DNS queries
+  - Long FQDN
+  - Random subdomains
+  - Volume of data over time over HTTPS, DNS, or non-standard ports
+  - Self-signed or short-lived certificates
+  - Known malicious IPs by cross-referencing with public threat intel feeds or blocklists
+ 
+- RITA only accepts network traffic input as Zeek logs. Zeek is an open-source network security monitoring (NSM) tool.
+
+- https://malware-traffic-analysis.net/
+```
+zeek readpcap <pcapfile> <outputdirectory>
+```
