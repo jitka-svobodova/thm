@@ -1209,6 +1209,47 @@ https://tryhackme.com/room/maldoc
 - RITA only accepts network traffic input as Zeek logs. Zeek is an open-source network security monitoring (NSM) tool.
 
 - https://malware-traffic-analysis.net/
+
+Zeek
+-----
+- get zeek logs
 ```
 zeek readpcap <pcapfile> <outputdirectory>
 ```
+https://docs.zeek.org/en/master/logs/index.html
+
+RITA
+----
+- analyze the logs with RITA
+```
+rita import --logs ~/zeek_logs/asyncrat/ --database asyncrat
+```
+- view the results
+```
+rita view <database-name>
+```
+- Most application layer protocols are stateless and close the connection quickly after exchanging data (exceptions are SSH, RDP, and VNC).
+
+Threat Modifiers
+These are criteria to determine the severity and likelihood of a potential threat. The following modifiers are available:
+- MIME type/URI mismatch: Flags connections where the MIME type reported in the HTTP header doesn't match the URI. This can indicate an attacker is trying to trick the browser or a security tool.
+- Rare signature: Points to unusual patterns that attackers might overlook, such as a unique user agent string that is not seen in any other connections on the network.
+- Prevalence: Analyzes the number of internal hosts communicating with a specific external host. A low percentage of internal hosts communicating with an external one can be suspicious.
+- First Seen: Checks the date an external host was first observed on the network. A new host on the network is more likely to be a potential threat.
+- Missing host header: Identifies HTTP connections that are missing the host header, which is often an oversight by attackers or a sign of a misconfigured system.
+- Large amount of outgoing data: Flags connections that send a very large amount of data out from the network.
+- No direct connections: Flags connections that don't have any direct connections, which can be a sign of a more complex or hidden command and control communication.
+
+Connection Info
+Here, we can find the connections' metadata and basic connection info like:
+- Connection count: Shows the number of connections initiated between the source and destination. A very high number can be an indicator of C2 beacon activity.
+- Total bytes sent: Displays the total amount of bytes sent from source to destination. If this is a very high number, it could be an indication of data exfiltration.
+- Port number - Protocol - Service: If the port number is non-standard, it warrants further investigation. The lack of SSL in the Service info could also be an indicator that warrants further investigation.
+
+Example:
+--------
+There is not much more we can say about the first entry, so let's have a look at the second entry:
+- The IP is malicious according to VirusTotal
+- The connection duration is quite long
+- The ports mentioned are non-standard ports
+This information warrants further investigation. You can pivot on the information you have obtained and dig into the Zeek logs and PCAP file. This is out of scope for this walkthrough, but feel free to dig into it and find out information. Just be cautious, as some of the PCAPs may contain malicious files, domains, and IPs that are still in use.
