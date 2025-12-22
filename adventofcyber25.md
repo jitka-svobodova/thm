@@ -1,4 +1,5 @@
 https://tryhackme.com/adventofcyber25
+Side quests: 1, 9, 17 (one_hopper_army), 21 
 
 0 Prep Track
 ====
@@ -1182,3 +1183,6 @@ ROOMS
 ------
 https://tryhackme.com/adventofcyber25/sidequest
 https://tryhackme.com/room/maldoc
+
+22 C2 Detection - Command & Carol
+==================================
