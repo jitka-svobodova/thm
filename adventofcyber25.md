@@ -1253,3 +1253,71 @@ There is not much more we can say about the first entry, so let's have a look at
 - The connection duration is quite long
 - The ports mentioned are non-standard ports
 This information warrants further investigation. You can pivot on the information you have obtained and dig into the Zeek logs and PCAP file. This is out of scope for this walkthrough, but feel free to dig into it and find out information. Just be cautious, as some of the PCAPs may contain malicious files, domains, and IPs that are still in use.
+
+23 AWS Security - S3cret Santa
+===============================
+Amazon Web Services (AWS)
+--------------------------
+```
+aws sts get-caller-identity
+```
+
+IAM
+---
+**Identity and Access Management (IAM)** service to manage users and their access to various resources, including the actions that can be performed against those resources
+- User: A user represents a single identity in AWS. Each user has a set of credentials, such as passwords or access keys, that can be used to access resources. Furthermore, permissions can be granted at a user level, defining the level of access a user might have.
+- Groups: The admin can grant access to a group and add all users who require write access to that group. When a user no longer needs access, they can be removed from the group.
+- Roles: An IAM Role is a temporary identity that can be assumed by a user, as well as by services or external accounts, to get certain permissions. Think of Sir Carrotbane, and how, depending on the battle ahead, he might need to assume the role of an attacker or a defender. When becoming an attacker, he will get permission to wield his shiny swords, but when assuming the role of a defender, he will instead get permission to carry a shield to better defend King Malhare.
+- Policies: Access provided to any user, group or role is controlled through IAM policies. A policy is a JSON document that defines the following:
+  - What action is allowed (Action)
+  - On which resources (Resource)
+  - Under which conditions (Condition)
+  - For whom (Principal)
+```
+aws iam list-users # enumerating users
+aws iam list-user-policies --user-name sir.carrotbane # inline user policies
+aws iam list-attached-user-policies --user-name sir.carrotbane # get policies
+aws iam list-attached-user-policies --user-name sir.carrotbane # get groups
+```
+
+```
+aws iam list-roles
+aws iam list-role-policies --role-name <ROLEMASTER>
+aws iam list-attached-role-policies --role-name <ROLEMASTER>
+```
+- Assuming role: To gain privileges assigned by the bucketmaster role, we need to assume it. We can use AWS STS to obtain the temporary credentials that enable us to assume this role.
+```
+aws sts assume-role --role-arn arn:aws:iam::123456789012:role/bucketmaster --role-session-name TBFC
+```
+This command will ask STS, the service in charge of AWS security tokens, to generate a temporary set of credentials to assume the bucketmaster role. The temporary credentials will be referenced by the session-name "TBFC" (you can set any name you want for the session).
+
+The output will provide us the credentials we need to assume this role, specifically the AccessKeyID, SecretAccessKey and SessionToken. To be able to use these, run the following commands in the terminal, replacing with the exact credentials that you received on running the assume-role command.
+```
+user@machine$ export AWS_ACCESS_KEY_ID="ASIAxxxxxxxxxxxx"
+user@machine$ export AWS_SECRET_ACCESS_KEY="abcd1234xxxxxxxxxxxx"
+user@machine$ export AWS_SESSION_TOKEN="FwoGZXIvYXdzEJr..."
+```
+Once we have done that, we can officially use the permissions granted by the bucketmaster role. To check if you have correctly assumed the role, you can once again run:
+```
+aws sts get-caller-identity
+```
+
+S3
+---
+**Amazon S3** stands for **Simple Storage Service**. It is an object storage service provided by Amazon Web Services that can store any type of object such as images, documents, logs and backup files. Companies often use S3 to store data for various reasons, such as reference images for their website, documents to be shared with clients, or files used by internal services for internal processing. Any object you store in S3 will be put into a "Bucket". You can think of a bucket as a directory where you can store files, but in the cloud.
+
+Listing Contents From a Bucket:
+Since our profile has permission to ListAllBuckets, we can list the available S3 buckets by running the following command:
+```
+aws s3api list-buckets
+```
+
+Get selected directory contents:
+```
+aws s3api list-objects --bucket easter-secrets-123145
+```
+
+Hmmm, let's copy the file in this directory to our local machine. This might have a secret message.
+```
+aws s3api get-object --bucket easter-secrets-123145 --key cloud_password.txt cloud_password.txt
+```
