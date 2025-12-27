@@ -1,5 +1,5 @@
 https://tryhackme.com/adventofcyber25
-Side quests: 1, 9, 17 (one_hopper_army), 21 
+Side quests: 1 (now_you_see_me), 9, 17 (one_hopper_army), 21 
 
 0 Prep Track
 ====
