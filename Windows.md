@@ -13,3 +13,38 @@ NTFS addresses many of the limitations of the previous file systems; such as:
 - Set specific permissions on folders and files
 - Folder and file compression
 - Encryption ( Encryption File System or EFS )
+
+| Permission             | Meaning for Folders                                                                                               | Meaning for Files                                                                     |
+| :--------------------- |:----------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------|
+| Read                   | Permits viewing and listing of files and subfolders                                                               | Permits viewing or accessing of the file's contents                                   |
+| Write                  | Permits adding of files and subfolders                                                                            | Permits writing to a file                                                             |
+| Read & Execute         | Permits viewing and listing of files and subfolders as well as executing of files; inherited by files and folders | Permits viewing and accessing of the file's contents as well as executing of the file |
+| List Folder Contents   | Permits viewing and listing of files and subfolders as well as executing of files; inherited by folders only      | N/A                                                                                   |
+| Modify                 | Permits reading and writing of files and subfolders; allows deletion of the folder                                | Permits reading and writing of the file; allows deletion of the file                  |
+| Full Control           | Permits reading, writing, changing, and deleting of files and subfolders                                          | Permits reading, writing, changing and deleting of the file                           |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
