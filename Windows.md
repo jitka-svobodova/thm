@@ -86,8 +86,16 @@ This slider has four security levels, each of which controls how Windows alerts 
 - Notify without dimming: Same as above (Notify for apps), but this time the screen does not dim. 
 - Never notify: Notifications are turned off. Windows won’t warn you about any changes made by you or any apps. 
 
-
-
+Computer Management
+--------------------
+- Task Scheduler
+- Event Viewer: view events that have occurred on the computer.
+  - Windows logs
+- Shared folders
+- WMI Control configures and controls the Windows Management Instrumentation (WMI) service.
+  - Per Wikipedia, "WMI allows scripting languages (such as VBScript or Windows PowerShell) to manage Microsoft Windows personal computers and servers, both locally and remotely. Microsoft also provides a command-line interface to WMI called Windows Management Instrumentation Command-line (WMIC)."
+  - Note: The WMIC tool is deprecated in Windows 10, version 21H1. Windows PowerShell supersedes this tool for WMI.
+  -  
 
 
 
