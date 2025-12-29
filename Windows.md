@@ -48,6 +48,12 @@ Local User and Group Management: Right-click on the Start Menu and click Run. Ty
 
 If you click on Add someone else to this PC from Other users, it will open Local Users and Management. 
 
+User Account Control (UAC)
+--------------------------
+- UAC (by default) doesn't apply for the built-in local administrator account.
+- When a user with an account type of administrator logs into a system, the current session doesn't run with elevated permissions. When an operation requiring higher-level privileges needs to execute, the user will be prompted to confirm if they permit the operation to run.
+https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/how-it-works
+
 
 
 
