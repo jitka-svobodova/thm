@@ -68,7 +68,8 @@ The System Configuration utility (MSConfig) is for advanced troubleshooting, and
 
 https://learn.microsoft.com/en-us/troubleshoot/windows-client/performance/system-configuration-utility-troubleshoot-configuration-errors
 
-Start menu > msconfig
+**Start menu > msconfig**
+
 Microsoft advises using Task Manager (taskmgr) to manage (enable/disable) startup items. The System Configuration utility is NOT a startup management program. 
 
 In Windows Server: Windows servers handle startup applications differently than Windows client systems. Unlike Windows 10 or 11, you will not see startup programs in Task Manager or in the Startup tab of msconfig.
