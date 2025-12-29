@@ -78,7 +78,13 @@ PsShutdown is a Sysinternals command-line utility used to shut down, restart, lo
 
 Control Panel: control.exe
 
-
+Change UAC Settings
+-------------------
+This slider has four security levels, each of which controls how Windows alerts you when apps or users try to make changes at the system level. They fall into four standard categories as explained below:
+- Always notify: This is the highest security. Windows notifies you whenever any apps or you yourself try to make changes, and the desktop dims (Secure Desktop).
+- Notify for apps: Windows notifies only when apps try to make changes, but not when you change Windows settings. This option is enabled by default.
+- Notify without dimming: Same as above (Notify for apps), but this time the screen does not dim. 
+- Never notify: Notifications are turned off. Windows won’t warn you about any changes made by you or any apps. 
 
 
 
