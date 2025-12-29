@@ -35,9 +35,18 @@ https://www.malwarebytes.com/blog/101/2015/07/introduction-to-alternate-data-str
 https://tryhackme.com/room/adventofcyber2 day 21
 
 
+Windows/system32
+-----------------
+%windir% - the system  environment variable for the Windows directory
 
+The System32 folder holds the important files that are critical for the operating system. Many of the tools that will be covered in the Windows Fundamentals series reside within the System32 folder. 
+https://www.howtogeek.com/346997/what-is-the-system32-directory-and-why-you-shouldnt-delete-it/
 
+User Accounts
+--------------
+Local User and Group Management: Right-click on the Start Menu and click Run. Type lusrmgr.msc
 
+If you click on Add someone else to this PC from Other users, it will open Local Users and Management. 
 
 
 
