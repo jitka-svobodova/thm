@@ -54,6 +54,11 @@ User Account Control (UAC)
 - When a user with an account type of administrator logs into a system, the current session doesn't run with elevated permissions. When an operation requiring higher-level privileges needs to execute, the user will be prompted to confirm if they permit the operation to run.
 https://learn.microsoft.com/en-us/windows/security/application-security/application-control/user-account-control/how-it-works
 
+Task manager
+------------
+https://www.howtogeek.com/405806/windows-task-manager-the-complete-guide/
+
+https://tryhackme.com/jr/btwindowsinternals
 
 
 
