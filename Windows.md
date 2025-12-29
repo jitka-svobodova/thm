@@ -76,7 +76,7 @@ On these Windows server machines, the only reliable way to view user-level start
 
 PsShutdown is a Sysinternals command-line utility used to shut down, restart, log off, lock, or put a Windows system to sleep, either locally or remotely.
 
-
+Control Panel: control.exe
 
 
 
