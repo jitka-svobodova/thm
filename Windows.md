@@ -60,8 +60,21 @@ https://www.howtogeek.com/405806/windows-task-manager-the-complete-guide/
 
 https://tryhackme.com/jr/btwindowsinternals
 
+Windows Fundamentals 2
+======================
+System Configuration
+--------------------
+The System Configuration utility (MSConfig) is for advanced troubleshooting, and its main purpose is to help diagnose startup issues. 
 
+https://learn.microsoft.com/en-us/troubleshoot/windows-client/performance/system-configuration-utility-troubleshoot-configuration-errors
 
+Start menu > msconfig
+Microsoft advises using Task Manager (taskmgr) to manage (enable/disable) startup items. The System Configuration utility is NOT a startup management program. 
+
+In Windows Server: Windows servers handle startup applications differently than Windows client systems. Unlike Windows 10 or 11, you will not see startup programs in Task Manager or in the Startup tab of msconfig.
+On these Windows server machines, the only reliable way to view user-level startup items is through the Startup folder itself. You can access it by pressing Win + R, which opens the Run Dialog, typing shell:startup, and then pressing Enter. 
+
+PsShutdown is a Sysinternals command-line utility used to shut down, restart, log off, lock, or put a Windows system to sleep, either locally or remotely.
 
 
 
