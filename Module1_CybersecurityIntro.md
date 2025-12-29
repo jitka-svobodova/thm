@@ -1,7 +1,9 @@
 Offensive Security Intro
 ========================
 https://tryhackme.com/room/offensivesecurityintro
+
 Gobuster: command-line application to brute-force the Website (https://github.com/OJ/gobuster)
+
 ```
 gobuster -u http://fakebank.thm -w wordlist.txt dir
 ```
