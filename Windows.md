@@ -95,7 +95,32 @@ Computer Management
 - WMI Control configures and controls the Windows Management Instrumentation (WMI) service.
   - Per Wikipedia, "WMI allows scripting languages (such as VBScript or Windows PowerShell) to manage Microsoft Windows personal computers and servers, both locally and remotely. Microsoft also provides a command-line interface to WMI called Windows Management Instrumentation Command-line (WMIC)."
   - Note: The WMIC tool is deprecated in Windows 10, version 21H1. Windows PowerShell supersedes this tool for WMI.
-  -  
+
+System Information
+------------------
+- HW Summary, Componente, Env Variables...
+
+Resource Monitor
+----------------
+- Network: TCP, ports, ...
+
+Command Prompt
+--------------
+https://ss64.com/nt/
+- hostname
+- whoami
+- ipconfig
+- help: ipconfig /?
+- cls
+- netstat
+- net, net help, net user, net help user
+
+Registry Editor
+---------------
+The Windows Registry (per Microsoft) is a central hierarchical database used to store information necessary to configure the system for one or more users, applications, and hardware devices.
+https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/windows-registry-advanced-users
+
+
 
 
 
