@@ -121,11 +121,83 @@ Registry Editor
 The Windows Registry (per Microsoft) is a central hierarchical database used to store information necessary to configure the system for one or more users, applications, and hardware devices.
 https://learn.microsoft.com/en-us/troubleshoot/windows-server/performance/windows-registry-advanced-users
 
+Windows Fundamentals 3
+======================
+Windows Update
+--------------
+- 2nd Tuesday of each month = patch Tuesday
+- https://msrc.microsoft.com/update-guide
+- Windows Update is located in Settings
+```
+control /name Microsoft.WindowsUpdate
+```
+https://support.microsoft.com/en-us/windows/windows-update-faq-8a903416-6f45-0718-f5c7-375e92dddeb2
 
+Windows Security
+----------------
+- Virus & threat protection
+- Firewall & network protection
+- App & browser control
+- Device security
 
+Virus & threat protection
+--------------------------
+is divided into two parts:
+- Current threats
+- Virus & threat protection settings
 
+Firewall
+---------
+"Traffic flows into and out of devices via what we call ports. A firewall is what controls what is - and more importantly isn't - allowed to pass through those ports. You can think of it like a security guard standing at the door, checking the ID of everything that tries to enter or exit".
 
+- command to open the Windows Defender Firewall is WF.msc
+- https://learn.microsoft.com/en-us/windows/security/operating-system-security/network-security/windows-firewall/configure
 
+App & browser control
+----------------------
+"Microsoft Defender SmartScreen protects against phishing or malware websites and applications, and the downloading of potentially malicious files".
+https://feedback.smartscreen.microsoft.com/smartscreenfaq.aspx
 
+Device security
+---------------
+Core isolation
+- Memory Integrity - Prevents attacks from inserting malicious code into high-security processes.
+
+Security processor
+- Trusted platform module (TPM)
+
+BitLocker
+----------
+BitLocker Drive Encryption is a data protection feature that integrates with the operating system and addresses the threats of data theft or exposure from lost, stolen, or inappropriately decommissioned computers.
+
+On devices with TPM installed, BitLocker offers the best protection.
+
+Per Microsoft, "BitLocker provides the most protection when used with a Trusted Platform Module (TPM) version 1.2 or later. The TPM is a hardware component installed in many newer computers by the computer manufacturers. It works with BitLocker to help protect user data and to ensure that a computer has not been tampered with while the system was offline".
+
+https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/
+
+We should use a removable drive on systems without a TPM version 1.2 or later. What does this removable drive contain? - startup key
+
+Volume Shadow Copy Service
+---------------------------
+Per Microsoft, the Volume Shadow Copy Service (VSS) coordinates the required actions to create a consistent shadow copy (also known as a snapshot or a point-in-time copy) of the data that is to be backed up. 
+If VSS is enabled (System Protection turned on), you can perform the following tasks from within advanced system settings. 
+- Create a restore point
+- Perform system restore
+- Configure restore settings
+- Delete restore points
+
+- From a security perspective, malware writers know of this Windows feature and write code in their malware to look for these files and delete them. Doing so makes it impossible to recover from a ransomware attack unless you have an offline/off-site backup.
+
+- Bonus: If you wish to interact hands-on with VSS, I suggest exploring Day 23 of Advent of Cyber 2. https://tryhackme.com/room/adventofcyber2
+
+- Antimalware Scan Interface https://learn.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal
+- Credential Guard https://learn.microsoft.com/en-us/windows/security/identity-protection/credential-guard/configure?tabs=intune
+- Windows 10 Hello https://support.microsoft.com/en-us/windows/configure-windows-hello-dae28983-8242-bb2a-d3d1-87c9d265a5f0#:~:text=Windows%2010,in%20with%20just%20your%20PIN.
+- CSO Online - The best new Windows 10 security features https://www.csoonline.com/article/564531/the-best-new-windows-10-security-features.html
+
+- Note: Attackers use built-in Windows tools and utilities in an attempt to go undetected within the victim environment.  This tactic is known as Living Off The Land. Refer to the following resource here to learn more about this.  https://lolbas-project.github.io/
+
+- 
 
 
