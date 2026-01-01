@@ -53,6 +53,14 @@ The DHCP server then replies back with an IP address the device could use (DHCP 
 the DHCP server sends a reply acknowledging this has been completed, and the device can start using the IP Address (DHCP ACK).
 ![Alt text](./img/2_DHCP.png "DHCP")
 
+OSI Model
+==========
+TODO
+
+Packets and Frames
+==================
+- A packet is a piece of data from Layer 3 (Network Layer) of the OSI model, containing information such as an IP header and payload.
+- A frame, is used at Layer 2 (Data Link) of the OSI model, which, encapsulates the packet and adds additional information such as MAC addresses.
 
 
 
