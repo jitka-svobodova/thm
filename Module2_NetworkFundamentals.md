@@ -56,6 +56,9 @@ the DHCP server sends a reply acknowledging this has been completed, and the dev
 OSI Model
 ==========
 TODO
+![Alt text](./img/osi.png "OSI")
+![Alt text](./img/OSI_Model_v1.svg.png "OSI")
+
 
 Packets and Frames
 ==================
