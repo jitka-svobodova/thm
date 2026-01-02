@@ -65,6 +65,19 @@ Packets and Frames
 - A packet is a piece of data from Layer 3 (Network Layer) of the OSI model, containing information such as an IP header and payload.
 - A frame, is used at Layer 2 (Data Link) of the OSI model, which, encapsulates the packet and adds additional information such as MAC addresses.
 
+TCP/IP (The Three-Way Handshake)
+================================
+- Transmission Control Protocol
+- "summarised version of the OSI model", 4 layers:
+  - Application
+  - Transport
+  - Internet
+  - Network Interface
+ 
+ - encapsulation/decapsulation: information is added to each layer of the TCP model as the piece of data (or packet) traverses it
+ - connection-based: TCP must establish a connection between both a client and a device acting as a server before data is sent.
+
+TODO
 
 
 
