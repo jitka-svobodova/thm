@@ -79,6 +79,18 @@ TCP/IP (The Three-Way Handshake)
 
 TODO
 
+UDP/IP
+=======
+TODO
+
+Ports 101
+=========
+TODO
+```
+nc 8.8.8.8 1234
+```
+
+
 
 
 
