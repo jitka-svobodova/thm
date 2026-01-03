@@ -31,3 +31,8 @@ Shodan
 ```
 apache 2.4.1
 ```
+
+https://www.shodan.io/search/examples
+
+https://trends.shodan.io/
+
