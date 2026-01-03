@@ -70,3 +70,24 @@ Github
 - tools related to CVEs (Common Vulnerabilities and Exposures), along with proof-of-concept (PoC)
 - https://github.com/search?q=heartbleed&type=repositories
 
+Technical Documentation
+=======================
+Linux Manual Pages
+------------------
+- man ip
+- q to quit
+- https://linux.die.net/man/8/ip
+
+Microsoft Windows
+-----------------
+- https://learn.microsoft.com/
+
+Product Documentation
+---------------------
+Examples:
+- https://www.snort.org/documents
+- https://httpd.apache.org/docs/
+- https://www.php.net/manual/en/index.php
+- https://nodejs.org/docs/latest/api/
+
+- 
