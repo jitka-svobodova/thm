@@ -90,4 +90,7 @@ Examples:
 - https://www.php.net/manual/en/index.php
 - https://nodejs.org/docs/latest/api/
 
-- 
+Social Media
+-------------
+When protecting a company, you should ensure that the people you protect are not oversharing on social media. For instance, their social media might give away the answer to their secret questions, such as, “Which school did you go to as a child?”. Such information might allow adversaries to reset their passwords and take over their accounts effortlessly.
+
