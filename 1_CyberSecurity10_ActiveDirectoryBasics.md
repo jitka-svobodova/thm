@@ -40,5 +40,30 @@ Objects within the Active Directory:
    | Domain Users       |	Includes all existing user accounts in the domain.                                                                                                        |
    | Domain Computers	  | Includes all existing computers in the domain.                                                                                                            | 
    | Domain Controllers	| Includes all existing DCs on the domain.                                                                                                                  |
+   | other              | see https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups                                                     |
 
-   
+Active Directory Users and Computers
+- log in to the Domain Controller and run "Active Directory Users and Computers" from the start menu
+- **Organizational Units (OUs)**:
+  - container objects that allow you to classify users and machines
+  - a user can only be a part of a single OU at a time
+
+- default containers:
+  - **Builtin:** Contains default groups available to any Windows host.
+  - **Computers:** Any machine joining the network will be put here by default. You can move them if needed.
+  - **Domain Controllers:** Default OU that contains the DCs in your network.
+  - **Users:** Default users and groups that apply to a domain-wide context.
+  - **Managed Service Accounts:** Holds accounts used by services in your Windows domain.
+
+Security Groups vs OUs
+- **Organizational Units (OUs)** are handy for applying policies to users and computers, which include specific configurations that pertain to sets of users depending on their particular role in the enterprise. Remember, a user can only be a member of a single OU at a time, as it wouldn't make sense to try to apply two different sets of policies to a single user.
+- **Security Groups**, on the other hand, are used to grant permissions over resources. For example, you will use groups if you want to allow some users to access a shared folder or network printer. A user can be a part of many groups, which is needed to grant access to multiple resources.
+
+- TODO:
+- Domain Admins
+- TOM-PC$
+- Organizational Units
+
+
+
+
