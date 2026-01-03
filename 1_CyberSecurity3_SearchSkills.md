@@ -20,3 +20,14 @@ The search operators supported by Google:
 
 https://github.com/cipher387/Advanced-search-operators-list
 
+Specialized Search Engines
+===========================
+Shodan
+------
+- https://www.shodan.io/
+- devices connected to the Internet
+- search for specific types and versions of servers, networking equipment, industrial control systems, and IoT devices
+- Example: how many servers are still running Apache 2.4.1 and the distribution across countries
+```
+apache 2.4.1
+```
