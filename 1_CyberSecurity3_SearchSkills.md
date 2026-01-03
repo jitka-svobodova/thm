@@ -40,7 +40,6 @@ Censys
 - https://search.censys.io/
 - https://docs.censys.com/docs/ls-introductory-use-cases
 
-
 Virus Total
 ------------
 - https://www.virustotal.com/gui/home/upload
@@ -51,4 +50,23 @@ Have I Been Pwned
 - https://haveibeenpwned.com/
 - if an email address has appeared in a leaked data breach
 
+Vulnerabilities and Exploits
+=============================
+CVE
+----
+- Common Vulnerabilities and Exposures (CVE): a dictionary of vulnerabilities
+- Provides a standardized identifier for vulnerabilities and security issues in software and hardware products.
+- Each vulnerability is assigned a CVE ID with a standardized format like CVE-2024-29988.
+- https://www.cve.org/
+- https://nvd.nist.gov/ (Example: https://nvd.nist.gov/vuln/detail/CVE-2024-29988)
+
+Exploit Database
+-----------------
+- We should not try to exploit a vulnerable system unless we are given permission, usually via a legally binding agreement. Now that we have permission to exploit a vulnerable system, we might need to find a working exploit code.
+- https://www.exploit-db.com/
+
+Github
+--------
+- tools related to CVEs (Common Vulnerabilities and Exposures), along with proof-of-concept (PoC)
+- https://github.com/search?q=heartbleed&type=repositories
 
