@@ -31,8 +31,24 @@ Shodan
 ```
 apache 2.4.1
 ```
-
 https://www.shodan.io/search/examples
 
 https://trends.shodan.io/
+
+Censys
+-------
+- https://search.censys.io/
+- https://docs.censys.com/docs/ls-introductory-use-cases
+
+
+Virus Total
+------------
+- https://www.virustotal.com/gui/home/upload
+- online website that provides a virus-scanning service for files using multiple antivirus engines
+
+Have I Been Pwned
+------------------
+- https://haveibeenpwned.com/
+- if an email address has appeared in a leaked data breach
+
 
